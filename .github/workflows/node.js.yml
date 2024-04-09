@@ -36,6 +36,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        # Print information about the user and file permissions
+      - name: Check Permissions
+        run: |
+          whoami
+          ls -l build
+        # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
