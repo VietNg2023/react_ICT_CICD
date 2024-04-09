@@ -31,7 +31,8 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: build-artifact
-          path: $GITHUB_WORKSPACE/build
+          path: ./build
+          if-no-files-found: warn
     
   deploy:
     needs: build
